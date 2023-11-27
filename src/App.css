@@ -1,85 +1,38 @@
-* {
-  margin:0;
-  padding:0;
+.App {
+  text-align: center;
 }
 
-body {
-  background-color: #f2bfe2;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
-header {
-  background-color: #ff90db;
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
-h1 {
-  font-size: 50px;
-  margin: 0 2rem;
-  color: #663966;
-}
-
-.content {
-  display: flex;
-}
-
-.book-sections {
-  margin: 2rem 2rem;
-  padding: 2rem 5rem;
-}
-
-.book-sections ul {
-  padding: 3rem 2rem;
-  border: 2px dashed #b469b5;
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-.book-sections ul li {
-  list-style: none;
-  font-size: 20px;
-  line-height: 1.5;
+.App-link {
+  color: #61dafb;
 }
 
-iframe {
-  margin: 0.5rem;
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-
-.dropbtn {
-  background-color: #ff9fdf;
-  color: #663966;
-  padding: 0.25rem 0.5rem;
-  cursor: pointer;
-  text-decoration: none;
-  border-radius: 0.2rem;
-}
-
-.dropbtn:hover {
-  background-color: #e682c6;
-  color: #552455;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #ffdff4;
-  max-width: 10rem;
-  box-shadow: 0 0.5rem 1rem 0 rgba(85,51,85,0.3);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: #814b81;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #ddd;}
-
-.show {display:block;}
