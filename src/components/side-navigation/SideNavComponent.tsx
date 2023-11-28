@@ -7,7 +7,7 @@ export class SideNavComponent extends React.PureComponent {
 
     render() {
         return (
-            <div className={'sideNav'}>
+            <div >
                     <ListMember/>
             </div>
         );

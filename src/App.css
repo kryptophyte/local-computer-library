@@ -14,16 +14,18 @@ body {
  "sidenav iframe iframe";
 }
 
-.iFrame {
+#iFrame {
   display: grid;
   grid-area: iframe;
+  color: aqua;
 }
 
 .sideNav {
   display: grid;
   grid-area: sidenav;
+  color: brown;
 }
 
-#bookFrame {
-  display: block;
-}
+/*#bookFrame {*/
+/*  display: block;*/
+/*}*/
