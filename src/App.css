@@ -8,22 +8,31 @@
 /*}*/
 
 body {
+  background: blue;
+}
+
+.App {
   display: grid;
   grid-template-areas:
  "sidenav iframe iframe"
- "sidenav iframe iframe";
 }
 
-#iFrame {
+/*.book {*/
+/*  width: 50%;*/
+/*}*/
+
+.iFrame {
   display: grid;
   grid-area: iframe;
-  color: aqua;
+  background-color: aqua;
+
 }
 
 .sideNav {
   display: grid;
   grid-area: sidenav;
-  color: brown;
+  background-color: brown;
+  width: 30%;
 }
 
 /*#bookFrame {*/

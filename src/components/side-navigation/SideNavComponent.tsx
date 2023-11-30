@@ -3,12 +3,12 @@ import {books} from "../../books";
 import {ListMember} from "../../editors/ListMember/ListMember"
 import '../../App.css';
 
-export class SideNavComponent extends React.PureComponent {
+export class SideNavComponent extends React.PureComponent <{changeBook}> {
 
     render() {
         return (
             <div >
-                    <ListMember/>
+                    <ListMember changeBook={this.props.changeBook}/>
             </div>
         );
     }

@@ -1,14 +1,13 @@
 import {books} from "../../books";
 import React from "react";
 import '../../App.css';
-import {state} from "../../redux/state";
 import Iframe from "react-iframe";
 import {Document, Page, pdfjs } from "react-pdf";
 //import * from '../../../public/books/biodiversity_eval.pdf'
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-export class IFrameComponent extends React.PureComponent <{props: any}, { pageNumber: number }> {
+export class IFrameComponent extends React.PureComponent <{currentBook}, { pageNumber: number }> {
     //pageNumber = 5;
 
     constructor(props) {
@@ -19,8 +18,9 @@ export class IFrameComponent extends React.PureComponent <{props: any}, { pageNu
     }
 //books/biology/russian/biodiversity_eval.pdf
     getBookPath = () => {
-        let bookPath
-        return  'books/biology/russian/virusology.pdf';
+        let bookPath = `books/${books[this.props.currentBook].genre}/${books[this.props.currentBook].language}/${books[this.props.currentBook].name}`
+        debugger
+        return  bookPath;
     }
 
     render() {
@@ -33,7 +33,7 @@ export class IFrameComponent extends React.PureComponent <{props: any}, { pageNu
                      Page {this.state.pageNumber} of {39}
                      <button onClick={() => {this.setState({pageNumber : this.state.pageNumber +1 })}}></button>
                  </p>
-                <Document file={this.getBookPath()}>
+                <Document file={this.getBookPath()} className={'book'}>
                     <Page pageNumber={this.state.pageNumber} />
                 </Document>
             </div>
