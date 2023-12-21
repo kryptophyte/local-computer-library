@@ -1,9 +1,19 @@
- let state = {
-    book : 0
+
+
+let state = {
+    book : 0,
 };
 
-export let changeBook = (i: number) => {
-    return state.book = i;
-};
+let renderApp;
+
+export const changeBook =(i) => {
+
+    state.book = i
+    renderApp(state)
+}
+
+export const subscribe = (observer) => {
+        renderApp = observer;
+}
 
  export default state;

@@ -16,10 +16,17 @@ export class IFrameComponent extends React.PureComponent <{currentBook}, { pageN
             pageNumber : 1
         }
     }
+
+
+
 //books/biology/russian/biodiversity_eval.pdf
     getBookPath = () => {
-        let bookPath = `books/${books[this.props.currentBook].genre}/${books[this.props.currentBook].language}/${books[this.props.currentBook].name}`
-        debugger
+        let bookPath
+        if (books[this.props.currentBook].subgenre == '') {
+            bookPath = `books/${books[this.props.currentBook].genre}/${books[this.props.currentBook].language}/${books[this.props.currentBook].name}.pdf`
+        } else {
+            bookPath = `books/${books[this.props.currentBook].genre}/${books[this.props.currentBook].language}/${books[this.props.currentBook].subgenre}/${books[this.props.currentBook].name}.pdf`
+        }
         return  bookPath;
     }
 

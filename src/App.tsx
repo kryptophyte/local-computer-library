@@ -5,7 +5,9 @@ import {IFrameComponent} from './components/iframe/iFrameComponent'
 import {SideNavComponent} from "./components/side-navigation/SideNavComponent";
 
 
-class App extends React.PureComponent <{state, changeBook}> {
+
+export class App extends React.Component <{state, changeBook}> {
+
 
     render() {
         return (
@@ -34,5 +36,3 @@ class App extends React.PureComponent <{state, changeBook}> {
 //     </div>
 //   );
 // }
-
-export default App;
