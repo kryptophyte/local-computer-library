@@ -11,11 +11,12 @@ const root = ReactDOM.createRoot(
 );
 
 let renderApp = (state) => {
-
  root.render(
       <App
           state={state}
-          changeBook={store.changeBook}/>
+          changeBook={store.changeBook}
+          //bookPath={store.getState()}
+      />
  );
 }
 

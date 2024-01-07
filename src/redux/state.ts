@@ -1,22 +1,29 @@
 import {books} from "../books";
+class BookState {
+    bookId : number = 0;
+    bookPath: string;
+    name: string = books[this.bookId].name;
+    genre: string = books[this.bookId].genre;
+    language: string = books[this.bookId].language;
+    subgenre: string = books[this.bookId].subgenre;
+}
+class Store {
+    _state = new BookState()
 
-class Store  {
-    _state: {
-        bookId : 0,
-        bookPath: string,
+    constructor() {
+    this.getBookPath()
     }
 
-    book: {
-        name: string,
-        genre: string,
-        language: string,
-        subgenre: string,
-    }
-    _renderApp = (store) => {return 'meow'};
-    subscribe = (observer) => {debugger ; this._renderApp = observer}
+    _callSubscriber = (store) => {return 'meow'};
+    subscribe = (observer) => { this._callSubscriber = observer}
     changeBook = (i) =>  {
         this._state.bookId = i;
-        this._renderApp(this._state)
+        this._state.name = books[i].name;
+        this._state.genre = books[i].genre;
+        this._state.language = books[i].language;
+        this._state.subgenre = books[i].subgenre;
+        this.getBookPath()
+        this._callSubscriber(this._state)
     }
     setState = (newState) => {
         return this._state = newState
@@ -25,7 +32,13 @@ class Store  {
         return this._state
     }
     getBookPath = () => {
-        this._state.bookPath = `books/${this.book.genre}/${this.book.language}${this.book.subgenre}/${this.book.name}.pdf`
+        if (this._state.subgenre != '') {
+            return this._state.bookPath = `books/${this._state.genre}/${this._state.language}/${this._state.subgenre}/${this._state.name}.pdf`
+        }
+        else {
+            return this._state.bookPath = `books/${this._state.genre}/${this._state.language}/${this._state.name}.pdf`
+        }
+
     }
 }
 

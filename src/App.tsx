@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import {IFrameComponent} from './components/iframe/iFrameComponent'
 import {SideNavComponent} from "./components/side-navigation/SideNavComponent";
 
 
-class App extends React.PureComponent <{state, changeBook}> {
+class App extends React.Component <{state, changeBook}> {
 
     render() {
         return (
@@ -14,7 +14,7 @@ class App extends React.PureComponent <{state, changeBook}> {
                     <SideNavComponent changeBook={this.props.changeBook} />
                 </div>
                 <div className={'iFrame'}>
-                    <IFrameComponent currentBook={this.props.state.book}/>
+                    <IFrameComponent bookPath={this.props.state.bookPath}/>
                 </div>
             </div>
         );
