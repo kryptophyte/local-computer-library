@@ -1,0 +1,14 @@
+
+.bookContainer {
+
+    overflow: hidden;
+}
+
+.book {
+    width: 595px;
+    height: 842px;
+}
+
+.page {
+    color: white;
+}

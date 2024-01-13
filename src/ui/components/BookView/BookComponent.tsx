@@ -1,13 +1,12 @@
-
 import React from "react";
-import '../../App.css';
+import styles from '../../css/BookContainer.module.css';
 import Iframe from "react-iframe";
 import {Document, Page, pdfjs } from "react-pdf";
 
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-export class IFrameComponent extends React.PureComponent <{bookPath}, { pageNumber: number }> {
+export class BookComponent extends React.PureComponent <{bookPath}, { pageNumber: number }> {
 
 
     constructor(props) {
@@ -20,14 +19,15 @@ export class IFrameComponent extends React.PureComponent <{bookPath}, { pageNumb
     render() {
         return (
             // <div className={'iFrame'}>
-            //     <iframe title={'doin ur mmom'} src={this.getBookPath()} height={600}/>
-            // </div>
-             <div >
-                 <p>
+            //     <BookView title={'doin ur mmom'} src={this.getBookPath()} height={600}/>
+            // </div>react-pdf
+
+             <div className={styles.bookContainer}>
+                 <p className={styles.page}>
                      Page {this.state.pageNumber} of {39}
-                     <button onClick={() => {this.setState({pageNumber : this.state.pageNumber +1 })}}></button>
+                     <button onClick={() => {this.setState({pageNumber : this.state.pageNumber +1 })}}>{'>>'}</button>
                  </p>
-                <Document file={this.props.bookPath} className={'book'}>
+                <Document file={this.props.bookPath} className={styles.book}>
                     <Page pageNumber={this.state.pageNumber} />
                 </Document>
             </div>

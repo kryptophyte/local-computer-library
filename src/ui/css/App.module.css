@@ -1,0 +1,68 @@
+/** {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  border: 0;*/
+/*  font-size: 100%;*/
+/*  font: inherit;*/
+/*  vertical-align: baseline;*/
+/*}*/
+
+body {
+  background: #2e1c42;
+}
+
+.App {
+  display: grid;
+  /*display: flex;*/
+  grid-template-areas:
+   'header header header header'
+  'sidenav list book book'
+}
+
+/*.book {*/
+/*  width: 50%;*/
+/*}*/
+/*.mainContent {*/
+/*  display: grid;*/
+/*  grid-row-start: row1-end;*/
+/*  !*display: flex;*!*/
+/*  !*flex-direction: row;*!*/
+/*  grid-area: content;*/
+/*  !*grid-template-areas:*!*/
+/*  !*        'list book';*!*/
+/*}*/
+
+.bookContainer {
+
+  display: grid;
+
+  /*display: flex;*/
+  grid-area: book;
+}
+
+.bookList {
+  display: grid;
+  justify-self: start;
+  /*display: flex;*/
+  grid-area: list;
+}
+
+.sideNav {
+  display: grid;
+  grid-area: sidenav;
+}
+
+.header{
+  display: grid;
+  grid-row-start: row1-start;
+  grid-row-end: 2;
+  grid-column-start: 2;
+  /*grid-row-end: 3;*/
+  /*display: flex;*/
+  grid-area: header;
+  height: 50px;
+  /*align-items: flex-start;*/
+  width: 100%;
+  background-color: #6a008c;
+}
+

@@ -1,0 +1,8 @@
+.bookList {
+    align-content: center;
+    display: grid;
+}
+
+.book {
+    color: white;
+}

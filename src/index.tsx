@@ -1,7 +1,7 @@
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import store from "./redux/state";
-
+import store from "./redux/redux-store";
+import './output.css'
 import ReactDOM from "react-dom/client";
 import React from "react";
 import App from "./App";
@@ -14,7 +14,7 @@ let renderApp = (state) => {
  root.render(
       <App
           state={state}
-          changeBook={store.changeBook}
+          dispatch={store.dispatch}
           //bookPath={store.getState()}
       />
  );
@@ -22,7 +22,7 @@ let renderApp = (state) => {
 
 renderApp(store.getState())
 
-store.subscribe(renderApp)
+store.subscribe(() => renderApp(store.getState()))
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
