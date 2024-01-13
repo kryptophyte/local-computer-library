@@ -11,27 +11,30 @@ class Store {
     _state = new BookState()
 
     constructor() {
-    this.getBookPath()
+    this._getBookPath()
     }
 
     _callSubscriber = (store) => {return 'meow'};
+
+
     subscribe = (observer) => { this._callSubscriber = observer}
-    changeBook = (i) =>  {
+
+    getState = () => {
+        return this._state
+    }
+
+
+    _changeBook = (i) =>  {
         this._state.bookId = i;
         this._state.name = books[i].name;
         this._state.genre = books[i].genre;
         this._state.language = books[i].language;
         this._state.subgenre = books[i].subgenre;
-        this.getBookPath()
+        this._getBookPath()
         this._callSubscriber(this._state)
     }
-    setState = (newState) => {
-        return this._state = newState
-    }
-    getState = () => {
-        return this._state
-    }
-    getBookPath = () => {
+
+    _getBookPath = () => {
         if (this._state.subgenre != '') {
             return this._state.bookPath = `books/${this._state.genre}/${this._state.language}/${this._state.subgenre}/${this._state.name}.pdf`
         }
@@ -40,11 +43,23 @@ class Store {
         }
 
     }
+
+    dispatch = (action) => {
+        if (action.type == "CHANGE_BOOK") {
+            this._changeBook(action.number)}
+        // } else  if (action.type == "GET_BOOKPATH") {
+        //     this._getBookPath()
+        // }
+    }
 }
+
+ const ChangeBookAction = (i) => (
+    {type: "CHANGE_BOOK",  number: i}
+)
 
 let store = new Store();
 
-export default store;
+
 
 // let state = {
 //     book : 0,

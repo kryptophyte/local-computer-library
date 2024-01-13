@@ -22,7 +22,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-src/components/iframe/books/
+src/ui/components/BookView/books/
 /public/books/djvu/(Thieme flexibook) Werner Kahle, etc., et al, G. Spitzer, H.L. Dayan, A.D. Dayan - Color Atlas and Textbook of Human Anatomy. Internal Organs. Volume 2-Thieme Medical Publishers (1986).djvu
 /public/books/biology/english/genetics/3_19_DGENES_GENERAL_PRINCIPLES.pdf
 /public/books/djvu/- Color Atlas and Textbook of Human Anatomy. Locomotor System. Volume 1-Thieme (1986).djvu
