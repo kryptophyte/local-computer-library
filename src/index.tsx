@@ -5,6 +5,7 @@ import './output.css'
 import ReactDOM from "react-dom/client";
 import React from "react";
 import App from "./App";
+import {Provider} from "react-redux";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -12,11 +13,13 @@ const root = ReactDOM.createRoot(
 
 let renderApp = (state) => {
  root.render(
+     <Provider store={store}>
       <App
           state={state}
           dispatch={store.dispatch}
           //bookPath={store.getState()}
       />
+     </Provider>
  );
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import {ListMember} from "./ListMember/ListMember"
+import ListMember from "./ListMember/ListMember"
 import styles from '../../css/BookList.module.css';
 
 export class BookListComponent extends React.PureComponent <{dispatch}> {
@@ -8,7 +8,7 @@ export class BookListComponent extends React.PureComponent <{dispatch}> {
         return (
             <div className={styles.bookList}>
                 {/*<div className={'object-center'}>*/}
-                <ListMember dispatch={this.props.dispatch}/>
+                <ListMember/>
                 {/*</div>*/}
             </div>
         );

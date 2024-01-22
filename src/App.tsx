@@ -10,6 +10,7 @@ class App extends React.Component <{ state, dispatch }> {
 
     render() {
         return (
+
             <div className={styles.App}>
                 <div className={styles.sideNav}>
                     <SideNavComponent width={this.props.state.sideNav.width}/>

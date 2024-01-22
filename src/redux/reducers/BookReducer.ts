@@ -12,25 +12,25 @@ import {books} from "../../books";
  let initialState = new BookState()
 
 export let BookReducer = (state = initialState, action) => {
-   //debugger
+    let copy = {...state}
     switch (action.type) {
         case "GET_BOOK":
-            state.name = books[action.number].name;
-            state.genre = books[action.number].genre;
-            state.language = books[action.number].language;
-            state.subgenre = books[action.number].subgenre;
-            return state;
+            copy.name = books[action.number].name;
+            copy.genre = books[action.number].genre;
+            copy.language = books[action.number].language;
+            copy.subgenre = books[action.number].subgenre;
+            return copy;
         case "CHANGE_BOOK":
-            state.bookId = action.number;
-            return state;
+            copy.bookId = action.number;
+            return copy;
         case "GET_PATH" :
-            if (state.subgenre != '') {
-                state.bookPath = `books/${state.genre}/${state.language}/${state.subgenre}/${state.name}.pdf`
+            if (copy.subgenre != '') {
+                copy.bookPath = `books/${copy.genre}/${copy.language}/${copy.subgenre}/${copy.name}.pdf`
             }
             else {
-                state.bookPath = `books/${state.genre}/${state.language}/${state.name}.pdf`
+                copy.bookPath = `books/${copy.genre}/${copy.language}/${copy.name}.pdf`
             }
-            return state;
+            return copy;
         default: return state;
     }
 }
