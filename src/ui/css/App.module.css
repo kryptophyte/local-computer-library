@@ -7,8 +7,15 @@
 /*  vertical-align: baseline;*/
 /*}*/
 
+
+* {
+  font-family: 'JetBrains Mono', monospace;
+  color: white;
+}
+
+
 body {
-  background: #2e1c42;
+  background: #0c111e;
 }
 
 .App {
@@ -63,6 +70,6 @@ body {
   height: 50px;
   /*align-items: flex-start;*/
   width: 100%;
-  background-color: #6a008c;
+  background-color: #0c111e;
 }
 

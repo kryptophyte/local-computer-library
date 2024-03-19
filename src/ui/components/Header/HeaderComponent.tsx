@@ -1,14 +1,23 @@
 import React from "react";
 import {SideNavToggleAction} from "../../../redux/reducers/SideNavReducer";
 import styles from '../../css/Header.module.css';
+import sideNavState from "../../../mobx/SideNavStore";
+import {observer} from "mobx-react";
+import bookUploadStore from "../../../mobx/BookUploadStore";
 
-export class HeaderComponent extends React.PureComponent <{buttonText, dispatch}> {
+class HeaderComponent extends React.PureComponent {
 
     render() {
         return (
             <div>
-                <button onClick={() => this.props.dispatch(SideNavToggleAction())}> <p className={styles.button}>{this.props.buttonText}</p></button>
+                <button onClick={() => {
+                    sideNavState.toggleSideNav()
+                }}> <p className={styles.button}>{sideNavState.buttonText}</p></button>
+                {/*<button onClick={() => bookUploadStore.viewPopup()}*/}
+                {/*    style={{textAlign:'end', marginLeft: '10'}}><p> upload</p></button>*/}
             </div>
         );
     }
 }
+
+export default observer(HeaderComponent)

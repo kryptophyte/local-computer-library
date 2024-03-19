@@ -8,21 +8,24 @@ class SideNavState {
 let initialState = new SideNavState()
 
 export let SideNavReducer = (state = initialState, action) => {
+
+    let copy = {...state}
+
      switch (action.type) {
          case "TOGGLE_SIDENAV":
-             if (state.isClosed) {
-                 state.isClosed = false;
-                 state.width = 260;
-                 state.buttonText = 'close'
-                return state
+             if (copy.isClosed) {
+                 copy.isClosed = false;
+                 copy.width = 260;
+                 copy.buttonText = 'close'
+                 return copy
              }
              else {
-                 state.isClosed = true;
-                 state.width = 50;
-                 state.buttonText = 'open'
-                 return state
+                 copy.isClosed = true;
+                 copy.width = 50;
+                 copy.buttonText = 'open'
+                 return copy
              }
-             // state.isClosed = !state.isClosed;
+         // state.isClosed = !state.isClosed;
              // state.width = state.isClosed ? 50 : 260
          default: return state;
      }
