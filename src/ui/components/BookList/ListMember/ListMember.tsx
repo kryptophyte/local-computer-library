@@ -3,9 +3,10 @@ import {books} from "../../../../books";
 import {GetBookAction, ChangeBookAction, GetBookPathAction} from "../../../../redux/reducers/BookReducer";
 import styles from '../../../css/BookList.module.css';
 import {connect} from "react-redux";
+import bookState from "../../../../mobx/BookStore";
 
 
- class ListMemberComponent extends React.PureComponent <any> {
+ export default class ListMember extends React.PureComponent <any> {
 
 
 
@@ -15,10 +16,10 @@ import {connect} from "react-redux";
 
             let a =<li key={`row-${i}`}> <button
                 onClick={() => {
-
-                    this.props.changeBook(i)
-                    this.props.getBook(i)
-                    this.props.getBookPath()
+                        bookState.changeBook(i)
+                    // this.props.changeBook(i)
+                    // this.props.getBook(i)
+                    // this.props.getBookPath()
                    // this.props.dispatch(ChangeBookAction(i));
                    //  this.props.dispatch(GetBookAction(i));
                    //  this.props.dispatch(GetBookPathAction())
@@ -40,15 +41,15 @@ import {connect} from "react-redux";
     }
 }
 
-let mapStateToProps = (state) => ({
-        state: state.book
-})
-
-let mapDispatchToProps = (dispatch) => ({
-    changeBook: (i) => dispatch(ChangeBookAction(i)),
-    getBook: (i) => dispatch(GetBookAction(i)),
-    getBookPath: () => dispatch(GetBookPathAction())
-})
-
-const ListMember = connect( mapStateToProps, mapDispatchToProps )(ListMemberComponent)
-export default ListMember
+// let mapStateToProps = (state) => ({
+//         state: state.book
+// })
+//
+// let mapDispatchToProps = (dispatch) => ({
+//     changeBook: (i) => dispatch(ChangeBookAction(i)),
+//     getBook: (i) => dispatch(GetBookAction(i)),
+//     getBookPath: () => dispatch(GetBookPathAction())
+// })
+//
+// const ListMember = connect( mapStateToProps, mapDispatchToProps )(ListMemberComponent)
+// export default ListMember

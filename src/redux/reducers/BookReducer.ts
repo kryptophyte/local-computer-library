@@ -1,6 +1,6 @@
 import {books} from "../../books";
 
- class BookState {
+ class ReduxBookState {
     bookId : number = 0;
     bookPath: string;
     name: string = books[this.bookId].name;
@@ -9,7 +9,7 @@ import {books} from "../../books";
     subgenre: string = books[this.bookId].subgenre;
 }
 
- let initialState = new BookState()
+ let initialState = new ReduxBookState()
 
 export let BookReducer = (state = initialState, action) => {
     let copy = {...state}

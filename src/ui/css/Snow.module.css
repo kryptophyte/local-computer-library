@@ -1,0 +1,57 @@
+
+.snow {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.starLeft {
+    position: relative;
+    top: -1.5em;
+    left: -2em;
+    color: #bbb3ff;
+    animation: starfallLeft;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    will-change: transform;
+}
+.starUp {
+    position: relative;
+    /*top: -1.5em;*/
+    /*left: -2em;*/
+    color: #91cfd7;
+    /*animation: starfallUp;*/
+    /*animation-timing-function: linear;*/
+    /*animation-iteration-count: infinite;*/
+    /*will-change: transform;*/
+}
+
+@keyframes starfallLeft {
+    from {
+        /*transform:  translateY(0));*/
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateY(calc(100vh + 1.5em)) translateX(calc(100vw + 1.5em));
+    }
+}
+@keyframes starfallUp {
+    from {
+        transform:  translateY(0) ;
+        /*transform: translateX(0);*/
+    }
+
+    to {
+        transform: translateY(calc(100vh + 1.5em)) translateX(calc(100vw + 1.5em));
+    }
+}

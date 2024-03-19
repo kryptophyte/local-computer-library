@@ -6,26 +6,23 @@ import ReactDOM from "react-dom/client";
 import React from "react";
 import App from "./App";
 import {Provider} from "react-redux";
+import {BrowserRouter} from "react-router-dom";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 );
 
-let renderApp = (state) => {
+let renderApp = () => {
  root.render(
-     <Provider store={store}>
-      <App
-          state={state}
-          dispatch={store.dispatch}
-          //bookPath={store.getState()}
-      />
-     </Provider>
+     <BrowserRouter>
+        <App/>
+     </BrowserRouter>
  );
 }
 
-renderApp(store.getState())
+renderApp()
 
-store.subscribe(() => renderApp(store.getState()))
+// store.subscribe(() => renderApp(store.getState()))
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

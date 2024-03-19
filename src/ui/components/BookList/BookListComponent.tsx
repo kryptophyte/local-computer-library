@@ -2,7 +2,7 @@ import React from "react";
 import ListMember from "./ListMember/ListMember"
 import styles from '../../css/BookList.module.css';
 
-export class BookListComponent extends React.PureComponent <{dispatch}> {
+export class BookListComponent extends React.PureComponent  {
 
     render() {
         return (
